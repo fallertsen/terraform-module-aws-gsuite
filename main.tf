@@ -7,7 +7,7 @@ resource "aws_route53_record" "mx-gsuite" {
     name    = "${data.aws_route53_zone.selected.name}"
 
     type    = "MX"
-    ttl     = "3600"
+    ttl     = "${var.ttl-gsuitemx}"
     records = [
         "1 ASPMX.L.GOOGLE.COM",
         "5 ALT1.ASPMX.L.GOOGLE.COM",
@@ -22,6 +22,6 @@ resource "aws_route53_record" "txt-gsuite" {
     name    = "${data.aws_route53_zone.selected.name}"
 
     type    = "TXT"
-    ttl     = "3600"
+    ttl     = "${var.ttl}"
     records = [ "${var.site-verification}" ]
 }
