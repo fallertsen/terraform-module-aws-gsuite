@@ -14,6 +14,8 @@ Input variables
 
 - `domain` - The domain registered in your Route53 zone
 - `site-verification` - The site-verification string provided by GSuite
+- `ttl` - TTL to TXT record
+- `ttl-gsuitemx` - TTL to MX record
 
 Usage
 -----
@@ -27,5 +29,7 @@ module "gsuite" {
 
     domain = "example.com"
     site-verification = "google-site-verification=AbCdEfGhIjKlMnOpQrStUvWxYz"
+    ttl = "3600"
+    ttl-gsuitemx = "172800"
 }
 ```
